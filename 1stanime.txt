@@ -1,0 +1,88 @@
+import React, {useState} from 'react';
+import { StyleSheet, ScrollView, StatusBar, Text, View, Button, Alert, SafeAreaView,Separator,Image, TouchableOpacity,ActivityIndicator } from 'react-native';
+import {Component} from 'react'
+
+export default function AOT (props){
+    return (
+        <View style={styles.container}>
+            <Text style={styles.titleText}>1st Anime: ATTACK ON TITAN</Text>
+            <Text style={styles.text}> Producer: Tetsuya Kinoshita {"\n"} Writer: Yasuko Kobayashi {"\n"} Directed by: Tetsurō Araki, Masashi Koizuka </Text>
+            
+            <ScrollView style={styles.container}>
+                <View style={styles.animeContainer}>
+                <Text style={styles.animeText}>ANIME SAMPLE IMAGE </Text>
+                </View>
+                <Text style={styles.subtext}>Synopsis</Text>
+                <View style={styles.animeContainer}>
+                <Text style={styles.animeText}>The season follows Gabi Braun and Falco Grice, young Eldian Warrior candidates
+                    seeking to inherit Reiner's Armored Titan four years after the failed mission to claim
+                    the Founding Titan. Marley plans to invade Paradis to strengthen their weakening military
+                    and recover the Founding Titan. With the Survey Corps on the Marley shoreline,
+                    Gabi, Falco, Reiner, and other Titans go to war with the Paradis soldiers as Eren Jaeger
+                    reveals his new plan of attack on the Marleyan invaders: annihilation. {"\n"}{"\n"}
+
+                    As both sides take a heavy death toll, both the Marleyan Warriors and the Survey Corps
+                    must question the best approach to claiming victory over the other side. Eren's comrades begin
+                    to realize that he has begun to walk down a questionable path, while Gabi and Falco
+                    must combat their internal tensions over the supposed "devils" of Paradis.  
+                </Text>
+                </View>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                
+                props.navigation.navigate('AOTChar');  }}>
+                <View style={styles.nextButton}>
+                <Text style={styles.Text}>{">>"} SEE CHARACTERS PAGE</Text>
+                </View>
+                </TouchableOpacity>
+            </ScrollView>
+       
+        </View>
+    );
+}
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    backgroundColor: '#808080',
+    color: 'white',
+  },
+  animeContainer:{
+      backgroundColor: 'white',
+      width: '85%',
+      padding: 50,
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: 20,
+  },
+  nextButton:{
+    backgroundColor: 'white',
+    width: '55%',
+    padding: 10,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 20,
+},
+
+  animeText:{
+    fontSize: 30,
+    
+  },
+  titleText:{
+      fontSize: 50,
+      fontWeight: 'bold',
+      alignSelf: 'center',
+      color: 'white',
+      margin: 20,
+  },
+  text:{
+      fontSize:20,
+      alignSelf: 'center',
+      color: 'white',
+  },
+  subtext:{
+    fontSize:30,
+    alignSelf: 'center',
+    color: 'white',
+}
+})
