@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './Home';
 
@@ -40,9 +40,24 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return(
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator initialRouteName="Home" 
+ 
+    screenOptions={{
+        drawerStyle: {
+          backgroundColor: '#e47334',
+          width: 300,    
+    },
+        headerStyle: {
+          backgroundColor: '#e47334',
+    },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+    }
+  }}
+ >
         <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="News" component={NewsScreen} />
+           <Drawer.Screen name="News" component={NewsScreen} />
         <Drawer.Screen name="Rank" component={RankingScreen} />
         <Drawer.Screen name="Vote" component={VoteScreen} />
       </Drawer.Navigator>
